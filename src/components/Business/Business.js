@@ -12,7 +12,7 @@ const business = {
     reviewCount: 90
 };
 
-export class Business extends React.Component{
+class Business extends React.Component{
 render() {
     return <div className="Business">
         <div className="image-container">
@@ -34,4 +34,4 @@ render() {
     </div>
 }
 }
-// export default Business;
+export default Business;
