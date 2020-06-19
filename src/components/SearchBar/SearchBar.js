@@ -7,15 +7,25 @@ let sortByOptions = {
     'Most Viewed': 'review_count'
 };
 
-class SearchBar extends React.Component{
-    renderSortByOptions(){
-        return Object.keys(sortByOptions).map(sortByOption =>{
+class SearchBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            term: '',
+            location: '',
+            sortBy: 'best_match'
+        };
+    }
+
+    renderSortByOptions() {
+        return Object.keys(sortByOptions).map(sortByOption => {
             let sortByOptionValue = sortByOptions[sortByOption];
             return <li key={sortByOptionValue}>{sortByOption}</li>
         });
     }
+
     render() {
-       return <div className="SearchBar">
+        return <div className="SearchBar">
             <div className="SearchBar-sort-options">
                 <ul>
                     {this.renderSortByOptions()}
@@ -31,4 +41,5 @@ class SearchBar extends React.Component{
         </div>
     }
 }
+
 export default SearchBar;
